@@ -8,7 +8,7 @@ layout: feed
 	<link href="http://elsame.github.io/blog/atom.xml" rel="self"/>
 	<link href="http://elsame.github.io/blog"/>
 	<updated>{{ site.time | date_to_xmlschema }}</updated>
-	<id>http://hankquinlan.github.io/blog</id>
+	<id>http://elsame.github.io</id>
 	<author>
 		<name>Elsa Margrét Einarsdóttir</name>
 		<email>elsam@simnet.is</email>
@@ -19,7 +19,7 @@ layout: feed
 			<title>{{ post.title }}</title>
 			<link href="http://elsame.github.io{{ post.url }}"/>
 			<updated>{{ post.date | date_to_xmlschema }}</updated>
-			<id>http://hankquinlan.github.io{{ post.id }}</id>
+			<id>http://elsame.github.io{{ post.id }}</id>
 			<content type="html">{{ post.content | xml_escape }}</content>
 		</entry>
 	{% endfor %}
