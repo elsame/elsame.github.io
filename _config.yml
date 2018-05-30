@@ -1,2 +1,1 @@
-name: Elsa Margrét Einarsdóttir
-markdown: kramdown
+permalink: /blog/:year/:month/:day/:title
