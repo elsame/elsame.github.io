@@ -83,7 +83,7 @@ And you get page looking like this:
 The reason of above error is we are not following the url structure which are set into the routing of web API application. The following is the default URL structure of ASP.NET Web API defined into the WebApiConfig.cs file. It should look like this:
 api/{controller}/{id}
 
-The browser supports Get request directly from URL
+The browser supports Get request directly from URL.
 So we need to add correct url that would then be in this case http://localhost:52651/api/EmployeeModels and then we get this page:
 
 ![My helpful screenshot]({{ "/assets/article1_pic8.jpg" | absolute_url }})
