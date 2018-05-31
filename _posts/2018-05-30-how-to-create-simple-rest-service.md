@@ -27,7 +27,9 @@ So we right click on the Project and select Manage NuGet packages and select Bro
 In the Web.config file we must add our connection string to the local database (included in Microsoft studio 2017)
 So under the configs ections we add this string:
 
-´<connectionStrings><add name="EmployeeDBContext" connectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=aspnet-Employee;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\Employee.mdf" providerName="System.Data.SqlClient" /></connectionStrings>´
+´´´
+<connectionStrings><add name="EmployeeDBContext" connectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=aspnet-Employee;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\Employee.mdf" providerName="System.Data.SqlClient" /></connectionStrings>
+´´´
 
 It will connect to our local database and create Employee catalog when we run the Application
 
@@ -80,5 +82,6 @@ So we need to add correct url that would then be in this case http://localhost:5
 
 ![My helpful screenshot]({{ "/assets/article1_pic8.jpg" | absolute_url }})
 
-So next we need to test this Rest Service and I will do that in my nest article. This is my first blog so I´m still learning how to do this. Here´s a link to this project on my Git account <http://elsame.github>
+So next we need to test this Rest Service, host it and add front end to it. I will do that in my next upcoming blogs. 
+Here´s a link to this project on my Git account <http://elsame.github.io>
 
