@@ -89,5 +89,5 @@ So we need to add correct url that would then be in this case http://localhost:5
 ![My helpful screenshot]({{ "/assets/article1_pic8.jpg" | absolute_url }})
 
 So next we need to test this Rest Service, host it and add front end to it. I will do that in my next upcoming blogs. 
-Here´s a link to this project on my Git account <http://elsame.github.io>
+Here´s a link to this project on my Git account <https://github.com/elsame/RestfulService>
 
