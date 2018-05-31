@@ -4,7 +4,7 @@ title: "How to create a simple Rest Service and use Entity Model to connect to l
 date: 2018-05-30
 ---
 
-In my this blog I´m gonna write simple tutorials to get people start trying new things. My first blog is about how to use 
+In this blog I´m gonna write simple tutorials to get people start trying new things. My first blog is about how to use 
 Microsoft Visual Studio 2017 to create a Rest Service Api. Hopefully a help for someone new.
 
 ## Step 1 ##
@@ -27,9 +27,9 @@ So we right click on the Project and select Manage NuGet packages and select Bro
 In the Web.config file we must add our connection string to the local database (included in Microsoft studio 2017)
 So under the configs sections we add this string:
 
-´´´
+'''
 <connectionStrings><add name="EmployeeDBContext" connectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=aspnet-Employee;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\Employee.mdf" providerName="System.Data.SqlClient" /></connectionStrings>
-´´´
+'''
 
 It will connect to our local database and create Employee catalog when we run the Application
 
