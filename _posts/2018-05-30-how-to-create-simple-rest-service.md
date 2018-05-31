@@ -25,7 +25,7 @@ So we right click on the Project and select Manage NuGet packages and select Bro
 ![My helpful screenshot]({{ "/assets/article1_pic3.jpg" | absolute_url }})
 
 In the Web.config file we must add our connection string to the local database (included in Microsoft studio 2017)
-So under the configs ections we add this string:
+So under the configs sections we add this string:
 
 ´´´
 <connectionStrings><add name="EmployeeDBContext" connectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=aspnet-Employee;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\Employee.mdf" providerName="System.Data.SqlClient" /></connectionStrings>
@@ -42,20 +42,24 @@ Right click on the Models folder and select Add->Class and we call it EmployeeMo
 
 We must add code to our class. First we want to use Entity framework so we add this code:
 
-'using System.Data.Entity;'
+´´´using System.Data.Entity;´´´´
 
 We want to have these properties in our database table so we add this code:
 
-'public int Id { get; set; }
+´´´
+public int Id { get; set; }
 public string Name { get; set; }
-public string City { get; set; }'
+public string City { get; set; }
+´´´
 
 Then we add this code to the class to connect to the database. The EmployeeDBContect name must be the same as the name of the connection string in the Web.config.
 
-'public class EmployeeDBContext : DbContext
+´´´
+public class EmployeeDBContext : DbContext
 {
     public DbSet<EmployeeModel> Employees { get; set; }
-}'
+}
+´´´
   
 ## Step 4 ##
 
