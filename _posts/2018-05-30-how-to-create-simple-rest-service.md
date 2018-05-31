@@ -27,9 +27,9 @@ So we right click on the Project and select Manage NuGet packages and select Bro
 In the Web.config file we must add our connection string to the local database (included in Microsoft studio 2017)
 So under the configs sections we add this string:
 
-'''
+```
 <connectionStrings><add name="EmployeeDBContext" connectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=aspnet-Employee;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\Employee.mdf" providerName="System.Data.SqlClient" /></connectionStrings>
-'''
+```
 
 It will connect to our local database and create Employee catalog when we run the Application
 
