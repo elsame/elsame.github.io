@@ -1,12 +1,11 @@
 ---
 layout: post
-title: "Elsa Margrét Einarsdóttir, Create a simple Rest Service"
+title: "How to create a simple Rest Service and use Entity Model to connect to local database"
 date: 2018-05-30
 ---
-# How to create a simple Rest Service and use Entity Model to connect to local database #
 
-In my this blog I´m gonna write simple tutorial to get people start trying new things. My first blog is about how to use 
-Vistual Studio 2017 to create a Rest Service Api. Hopefully a help for someone new.
+In my this blog I´m gonna write simple tutorials to get people start trying new things. My first blog is about how to use 
+Microsoft Visual Studio 2017 to create a Rest Service Api. Hopefully a help for someone new.
 
 ## Step 1 ##
 
