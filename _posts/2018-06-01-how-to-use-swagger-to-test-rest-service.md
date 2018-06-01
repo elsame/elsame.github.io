@@ -139,5 +139,5 @@ So I hit the "Try it out" button. And I get this as a answer:
 
 So yes there is an employee at the company now that has the name Elsa and lives in Hafnarfjörður and has Id 1.
 You can play further with this and you see that it is very easy to create a Rest API service connected to database in Visual Studio 2017. You can then use the Swagger xml file to create tests and use for automated testing.
-So next I we just need to create web client to use this rest API service. I will do it in my next blog.
+So next I just need to create web client to use this rest API service. I will do it in my next blog.
 
