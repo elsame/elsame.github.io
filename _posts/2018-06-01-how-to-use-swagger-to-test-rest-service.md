@@ -126,5 +126,43 @@ We need to add xml comment for each action in the class. So the code should look
             return Ok(employeeModel);
         }
         ```
-        Then open 
+Then open SwaggerConfig.cs class and add this method to it:
+        
+        ```
+        protected static string GetXmlCommentsPath()
+          {
+              return System.String.Format(@"{0}\bin\RestfulService.XML", 
+                  System.AppDomain.CurrentDomain.BaseDirectory);
+          }
+        ```
+Uncomment the following block of code inside the “Register” method:
+
+       ```
+       c.IncludeXmlComments(GetXmlCommentsPath());
+        ```
+        
+Now run the application. My application runs at http://localhost:52651 so I add /Swagger/ui/index to the url and then I can select EmployeeModels and it looks like this:
+
+![My helpful screenshot]({{ "/assets/article2_pic3.jpg" | absolute_url }})
+
+So now I can easily test my Rest API Service. I can select Post method and insert values for example:
+
+
+![My helpful screenshot]({{ "/assets/article2_pic4.jpg" | absolute_url }})
+
+And hit the "Try it out" button and get an answer looking like this:
+
+![My helpful screenshot]({{ "/assets/article2_pic5.jpg" | absolute_url }})
+
+So now I want to get the list of Employees and now I should be an Employee at this company.
+
+![My helpful screenshot]({{ "/assets/article2_pic6.jpg" | absolute_url }})
+
+So I hit the Try out button. And I get this as a answer:
+
+![My helpful screenshot]({{ "/assets/article2_pic7.jpg" | absolute_url }})
+
+So yes there is an Employee at the company now that has the name Elsa and lives in Hafnarfjörður and has Id 1.
+You can play further with this and you see that it is pretty easy to create a Rest API service connected to database in little time.  You can then use the Swagger xml file to create test and use for automated testing.
+So next up I we just need to create web client to use this web service. I will do it in my next blog.
 
