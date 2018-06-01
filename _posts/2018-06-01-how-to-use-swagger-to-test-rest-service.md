@@ -4,7 +4,7 @@ title: "How to use swagger to test Rest Api web service in .Net 2017"
 date: 2018-06-01
 ---
 
-In last blog we created Rest API Service but now we are going to test it. The most popular way now days is to use Swagger so we are going to do that in this blog. Here is a link to my previous project https://github.com/elsame/RestfulService .
+In last blog we created Rest API Service but now we are going to test it. The most popular way now days is to use Swagger so we are going to do that in this blog. Here is a link to my previous project <https://github.com/elsame/RestfulService> .
 
 We are going to implement Swagger using SwashBuckle. Open the project that we created in my last blog. Right click on the project and select Manage NuGet packages and in the browse search window we look for SwashBuckle and install it.
 
@@ -117,12 +117,11 @@ Uncomment the following block of code inside the “Register” method:
 c.IncludeXmlComments(GetXmlCommentsPath());
 ```
         
-Now run the application. My application runs at http://localhost:52651 so I add /Swagger/ui/index to the url and then I can select EmployeeModels and it looks like this:
+Now run the application. My application runs at http://localhost:52651 so I add /Swagger/ui/index to the url and then I can select EmployeeModels and it looks like this (http://localhost:52651/Swagger/ui/index):
 
 ![My helpful screenshot]({{ "/assets/article2_pic3.jpg" | absolute_url }})
 
 So now I can easily test my Rest API Service. I can select Post method and insert values for example:
-
 
 ![My helpful screenshot]({{ "/assets/article2_pic4.jpg" | absolute_url }})
 
@@ -130,16 +129,15 @@ And hit the "Try it out" button and get an answer looking like this:
 
 ![My helpful screenshot]({{ "/assets/article2_pic5.jpg" | absolute_url }})
 
-So now I want to get the list of Employees and now I should be an Employee at this company.
+So now I want to get the list of employees and now I should be an employee at this company.
 
 ![My helpful screenshot]({{ "/assets/article2_pic6.jpg" | absolute_url }})
 
-So I hit the Try out button. And I get this as a answer:
+So I hit the "Try it out" button. And I get this as a answer:
 
 ![My helpful screenshot]({{ "/assets/article2_pic7.jpg" | absolute_url }})
 
-So yes there is an Employee at the company now that has the name Elsa and lives in Hafnarfjörður and has Id 1.
-You can play further with this and you see that it is pretty easy to create a Rest API service connected to database.  
-You can then use the Swagger xml file to create tests and use for automated testing.
-So next up I we just need to create web client to use this rest API service. I will do it in my next blog.
+So yes there is an employee at the company now that has the name Elsa and lives in Hafnarfjörður and has Id 1.
+You can play further with this and you see that it is very easy to create a Rest API service connected to database in Visual Studio 2017. You can then use the Swagger xml file to create tests and use for automated testing.
+So next I we just need to create web client to use this rest API service. I will do it in my next blog.
 
