@@ -139,6 +139,7 @@ So I hit the Try out button. And I get this as a answer:
 ![My helpful screenshot]({{ "/assets/article2_pic7.jpg" | absolute_url }})
 
 So yes there is an Employee at the company now that has the name Elsa and lives in Hafnarfjörður and has Id 1.
-You can play further with this and you see that it is pretty easy to create a Rest API service connected to database in little time.  You can then use the Swagger xml file to create test and use for automated testing.
-So next up I we just need to create web client to use this web service. I will do it in my next blog.
+You can play further with this and you see that it is pretty easy to create a Rest API service connected to database.  
+You can then use the Swagger xml file to create tests and use for automated testing.
+So next up I we just need to create web client to use this rest API service. I will do it in my next blog.
 
