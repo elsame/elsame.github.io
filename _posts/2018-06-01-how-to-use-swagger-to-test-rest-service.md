@@ -19,23 +19,21 @@ Open EmployeeModelsController.cs file.
 We need to add xml comment for each action in the class. So the code should look like this:
 
 ```
-        /// <summary>
-        /// Retrieves the list of employees
-        /// </summary>
-        /// <returns></returns>
-        // GET: api/EmployeeModels
-        public IQueryable<EmployeeModel> GetEmployees()
-        {
-            return db.Employees;
-        }
+/// <summary>
+/// Retrieves the list of employees
+/// </summary>
+/// <returns></returns>
+public IQueryable<EmployeeModel> GetEmployees()
+{
+    return db.Employees;
+}
 
-        /// <summary>
-        /// Retrieves one value from the list of employees
-        /// </summary>
-        /// <param name="id">The id of the item to be retrieved</param>
-        /// <returns></returns>
-        // GET: api/EmployeeModels/5
-        [ResponseType(typeof(EmployeeModel))]
+/ <summary>
+/// Retrieves one value from the list of employees
+/// </summary>
+/// <param name="id">The id of the item to be retrieved</param>
+/// <returns></returns>
+ [ResponseType(typeof(EmployeeModel))]
         public IHttpActionResult GetEmployeeModel(int id)
         {
             EmployeeModel employeeModel = db.Employees.Find(id);
@@ -46,53 +44,51 @@ We need to add xml comment for each action in the class. So the code should look
 
             return Ok(employeeModel);
         }
+        
+/// <summary>
+/// Change a single value in the list
+/// </summary>
+/// <param name="id">The id of the value to be changed</param>
+/// <param name="employeeModel">The new value</param>
+ResponseType(typeof(void))]
+public IHttpActionResult PutEmployeeModel(int id, EmployeeModel employeeModel)
+{
+    if (!ModelState.IsValid)
+    {
+        return BadRequest(ModelState);
+    }
 
-        /// <summary>
-        /// Change a single value in the list
-        /// </summary>
-        /// <param name="id">The id of the value to be changed</param>
-        /// <param name="employeeModel">The new value</param>
-        // PUT: api/EmployeeModels/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutEmployeeModel(int id, EmployeeModel employeeModel)
+    if (id != employeeModel.Id)
+    {
+        return BadRequest();
+    }
+
+    db.Entry(employeeModel).State = EntityState.Modified;
+
+    try
+    {
+        db.SaveChanges();
+    }
+    catch (DbUpdateConcurrencyException)
+    {
+        if (!EmployeeModelExists(id))
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id != employeeModel.Id)
-            {
-                return BadRequest();
-            }
-
-            db.Entry(employeeModel).State = EntityState.Modified;
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!EmployeeModelExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return StatusCode(HttpStatusCode.NoContent);
+            return NotFound();
         }
+        else
+        {
+            throw;
+        }
+    }
 
-        /// <summary>
-        /// Insert a new value in the list
-        /// </summary>
-        /// <param name="employeeModel">New value to be inserted</param>
-        // POST: api/EmployeeModels
-        [ResponseType(typeof(EmployeeModel))]
+    return StatusCode(HttpStatusCode.NoContent);
+}
+        
+/// <summary>
+/// Insert a new value in the list
+/// </summary>
+/// <param name="employeeModel">New value to be inserted</param>
+[ResponseType(typeof(EmployeeModel))]
         public IHttpActionResult PostEmployeeModel(EmployeeModel employeeModel)
         {
             if (!ModelState.IsValid)
@@ -105,41 +101,21 @@ We need to add xml comment for each action in the class. So the code should look
 
             return CreatedAtRoute("DefaultApi", new { id = employeeModel.Id }, employeeModel);
         }
-
-        /// <summary>
-        /// Delete an item from the list
-        /// </summary>
-        /// <param name="id">id of the item to be deleted</param>
-        // DELETE: api/EmployeeModels/55
-        [ResponseType(typeof(EmployeeModel))]
-        public IHttpActionResult DeleteEmployeeModel(int id)
-        {
-            EmployeeModel employeeModel = db.Employees.Find(id);
-            if (employeeModel == null)
-            {
-                return NotFound();
-            }
-
-            db.Employees.Remove(employeeModel);
-            db.SaveChanges();
-
-            return Ok(employeeModel);
-        }
-        ```
+```
 Then open SwaggerConfig.cs class and add this method to it:
         
-        ```
-        protected static string GetXmlCommentsPath()
-          {
-              return System.String.Format(@"{0}\bin\RestfulService.XML", 
-                  System.AppDomain.CurrentDomain.BaseDirectory);
-          }
-        ```
+```
+protected static string GetXmlCommentsPath()
+  {
+      return System.String.Format(@"{0}\bin\RestfulService.XML", 
+          System.AppDomain.CurrentDomain.BaseDirectory);
+  }
+```
 Uncomment the following block of code inside the “Register” method:
 
-       ```
-       c.IncludeXmlComments(GetXmlCommentsPath());
-        ```
+```
+c.IncludeXmlComments(GetXmlCommentsPath());
+```
         
 Now run the application. My application runs at http://localhost:52651 so I add /Swagger/ui/index to the url and then I can select EmployeeModels and it looks like this:
 
