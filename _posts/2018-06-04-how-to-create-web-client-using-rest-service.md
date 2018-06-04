@@ -303,7 +303,7 @@ And select again Add->view a fiew times more:
 When this is done we compile and run. And it should look like this:
 (http://localhost:59320/Home/Index)
 
-![My helpful screenshot]({{ "/assets/article3_pic11.jpg" | absolute_url }})
+![My helpful screenshot]({{ "/assets/article3_pic12.jpg" | absolute_url }})
 
 And it should be fully function Web Client where you can get a list of all the employees, create new, edit, see detail and delete employee. So that is it.
 
