@@ -308,7 +308,7 @@ When this is done we compile and run. And it should look like this:
 
 And it should be fully function Web Client where you can get a list of all the employees, create new, edit, see detail and delete employee. 
 
-So now we have Rest Service Api that uses Entity Framework to connect to Local Database, can be teted with Swagger and used with this Web Client.
+So now we have Rest Service Api that uses Entity Framework to connect to Local Database, can be tested with Swagger and used with this Web Client.
 
 
 
