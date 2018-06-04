@@ -6,14 +6,20 @@ date: 2018-06-01
 
 In last blog we created Rest API Service and now we are going to test it. The most popular way now days is to use Swagger so we are going to do that in this blog. Here is a link to my previous project <https://github.com/elsame/RestfulService> .
 
+## Step 1 ##
+
 We are going to implement Swagger using SwashBuckle. Open the project that we created in my last blog. Right click on the project and select Manage NuGet packages and in the browse search window we look for SwashBuckle and install it.
 
 ![My helpful screenshot]({{ "/assets/article2_pic1.jpg" | absolute_url }})
+
+## Step 2 ##
 
 When finished installing right click on the project and select Properties.
 In the Build page select XML Documentation file.
 
 ![My helpful screenshot]({{ "/assets/article2_pic2.jpg" | absolute_url }})
+
+## Step 3 ##
 
 Open EmployeeModelsController.cs file. 
 We need to add xml comment for each action in the class. So the code should look like this:
@@ -116,7 +122,9 @@ Uncomment the following block of code inside the “Register” method:
 ```
 c.IncludeXmlComments(GetXmlCommentsPath());
 ```
-        
+   
+## Step 4 ##
+
 Now run the application. My application runs at http://localhost:52651 so I add /Swagger/ui/index to the url and then I can select EmployeeModels and it looks like this (http://localhost:52651/Swagger/ui/index):
 
 ![My helpful screenshot]({{ "/assets/article2_pic3.jpg" | absolute_url }})
