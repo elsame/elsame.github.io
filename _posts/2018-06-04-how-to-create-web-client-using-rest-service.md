@@ -4,18 +4,19 @@ title: "How to create Web Client using Rest Service in .Net 2017"
 date: 2018-06-04
 ---
 
-I´m showing how easy it is to create Web client using Rest service in Visual Studio 2017.
-So here you can find the finish project of the Web Client : <https://github.com/elsame/WebClientForRestService> and it uses the Rest Service I created in my earlier blog: <https://github.com/elsame/RestfulService>
+In this blog I´m showing how easy it is to create Web Client using Rest Service in Visual Studio 2017.
+Here you can find the finish project of the Web Client : <https://github.com/elsame/WebClientForRestService> and it uses the Rest Service I created in my earlier blog: <https://github.com/elsame/RestfulService>.
 
 This blog is based on the article <https://www.c-sharpcorner.com/article/consuming-asp-net-web-api-rest-service-in-asp-net-mvc-using-http-client/>
 
-So you can also fallow that article. The only thing here that is different is that I add the code for all the view, not just the employee list and I´m using my Rest service that uses Entity Framework and Local Database.
+So you can also fallow that article. The only thing here that is different is that I add the code for all the viewS, not just the employee list view and I´m using my Rest Service that uses Entity Framework and Local Database.
 
 ## Step 1 ##
 
-Open Visual Studio 2017. Select from Menu File->New->Project in Visual Studio 2017 select ASP.Net Web Application (.Net framework) and call it WebClientForRestService
+Open Visual Studio 2017. Select from Menu File->New->Project in Visual Studio 2017 select ASP.Net Web Application (.Net framework) and call it WebClientForRestService.
 
 ![My helpful screenshot]({{ "/assets/article3_pic1.jpg" | absolute_url }})
+
 In the next screenshot we select Empty and MVC:
 
 ![My helpful screenshot]({{ "/assets/article3_pic2.jpg" | absolute_url }})
@@ -24,10 +25,10 @@ Click "Ok" button and wait.
 
 ## Step 2 ##
 
-We are going to use HttpClient to consume the Web API REST Service, so we need to install this library from NuGet Package Manager .
+We are going to use HttpClient to consume the Web API REST Service, so we need to install this library from NuGet Package Manager.
 Right click on the project and select Manage NuGet packages.
+
 HttpClient is base class which is responsible to send HTTP request and receive HTTP response resources i.e from REST services.
- 
 To install HttpClient, right click on Solution Explorer of created application and search for HttpClient, as shown in the following image.
 
 Browse for system.net.http and install it.
@@ -56,7 +57,7 @@ public class EmployeeModel
 ```
 ## Step 5 ##
 
-Next I need to create Controller class so I right click on the Controllers folder and select Add->Controller and I choose MVC 5 Controller-Empty
+Next I need to create Controller class so I right click on the Controllers folder and select Add->Controller and I choose MVC 5 Controller-Empty.
 
 ![My helpful screenshot]({{ "/assets/article3_pic5.jpg" | absolute_url }})
 
@@ -278,14 +279,14 @@ setClientSettings(client);
 
 ## Step 7 ##
 
-Now I have to have my RestfulService I created in my last blog up and running like this:
+Now I have to run my RestfulService I created in my last blog:
 
 ![My helpful screenshot]({{ "/assets/article3_pic6.jpg" | absolute_url }})
 
 ## Step 8 ##
 
 Right click on Views folder and select Add->New Folder named Home.
-Right Click on the Home folder and select Add->view
+Right Click on the Home folder and select Add->view.
 
 ![My helpful screenshot]({{ "/assets/article3_pic7.jpg" | absolute_url }})
 
@@ -301,11 +302,13 @@ And select again Add->view a fiew times more:
 ![My helpful screenshot]({{ "/assets/article3_pic11.jpg" | absolute_url }})
 
 When this is done we compile and run. And it should look like this:
-(http://localhost:59320/Home/Index)
+(This is the url where my client runs: http://localhost:59320/Home/Index)
 
 ![My helpful screenshot]({{ "/assets/article3_pic12.jpg" | absolute_url }})
 
-And it should be fully function Web Client where you can get a list of all the employees, create new, edit, see detail and delete employee. So that is it.
+And it should be fully function Web Client where you can get a list of all the employees, create new, edit, see detail and delete employee. 
+
+So now we have Rest Service Api that uses Entity Framework to connect to Local Database, can be teted with Swagger and used with this Web Client.
 
 
 
