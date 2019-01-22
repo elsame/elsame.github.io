@@ -12,6 +12,10 @@ nav ul, footer ul {
 nav ul li, footer ul li {
     float: left;
 }
+
+.active {
+  background-color: #4CAF50;
+}
 a {
   display: block;
   color: white;
